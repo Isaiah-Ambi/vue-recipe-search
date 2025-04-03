@@ -11,14 +11,15 @@
       </div>
       
       <div class="recipe-content">
+
         <div class="ingredients">
-          <h2>Ingredients</h2>
-          <ul>
-            <li v-for="(ingredient, index) in ingredients" :key="index" v-if="ingredient.name">
-              {{ ingredient.measure }} {{ ingredient.name }}
-            </li>
-          </ul>
-        </div>
+        <h2>Ingredients</h2>
+        <ul>
+          <li v-for="(ingredient, index) in ingredients" :key="index">
+            {{ ingredient.name }} {{ ingredient.measure }}
+          </li>
+        </ul>
+      </div>
         
         <div class="instructions">
           <h2>Instructions</h2>
@@ -51,7 +52,7 @@
     },
     computed: {
       ingredients() {
-        if (!this.recipe) return []; // Ensure recipe is defined
+        if (!this.recipe && !this.recipe.strIngredient1) return []; // Ensure recipe is defined
         const ingredients = [];
         for (let i = 1; i <= 20; i++) {
           const ingredientKey = `strIngredient${i}`;
@@ -63,7 +64,7 @@
               measure: this.recipe[measureKey] || '', // Handle missing measures
             });
           }
-          console.log(ingredients);
+          // console.log(ingredients);
         }
         return ingredients;
       },

@@ -122,3 +122,41 @@ defineExpose({
     <recipe-list :recipes="recipes" :loading="loading" :error="error" />
   </div>
 </template>
+
+<style scoped>
+.home {
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.categories {
+  margin: 2rem 0;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.category-button {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #ff6b6b;
+  color: white;
+  border-color: #ff6b6b;
+}
+</style>
