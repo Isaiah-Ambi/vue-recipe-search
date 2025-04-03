@@ -45,7 +45,6 @@ async function getRandomMeals() {
     }
     
     recipes.value = meals;
-    console.log(recipes.value);
   } catch (err) {
     error.value = 'An error occurred while loading recipes.';
     console.error(err);
@@ -83,15 +82,12 @@ async function filterByCategory(category) {
 }
 
 onBeforeMount(() => {
-  getRandomMeals();
-  console.log('HomeView component is being created');
-});
-
-onMounted(() => {
-  console.log('recipes');
-});
+  getRandomMeals()
+})
 
 defineExpose({
+  RecipeSearch,
+  RecipeList,
   recipes,
   categories,
   loading,

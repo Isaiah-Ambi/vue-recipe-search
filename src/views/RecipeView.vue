@@ -3,10 +3,11 @@
       <div v-if="loading" class="loading">
         <p>Loading recipe details...</p>
       </div>
+
+      <recipe-detail v-else-if="recipe" :recipe="recipe" />
       <div v-else-if="error" class="error">
         <p>{{ error }}</p>
       </div>
-      <recipe-detail v-else-if="recipe" :recipe="recipe" />
       <div v-else class="not-found">
         <p>Recipe not found.</p>
         <button @click="$router.push({ name: 'home' })">Back to Recipes</button>
@@ -56,7 +57,7 @@
         } catch (error) {
           this.error = 'An error occurred while loading the recipe.';
           console.error(error);
-        } finally {
+         } finally {
           this.loading = false;
         }
       }

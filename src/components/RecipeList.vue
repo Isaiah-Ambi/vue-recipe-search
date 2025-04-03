@@ -41,14 +41,7 @@
         default: ''
       }
     },
-    beforeCreate() {
-      console.log('RecipeList component is being created ');
-    },
-    onMounted() {
-      console.log('RecipeList component mounted');
-    },
   };
-  console.log('RecipeList component loaded');
   </script>
   
   <style scoped>

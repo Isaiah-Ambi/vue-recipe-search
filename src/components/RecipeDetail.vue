@@ -63,6 +63,7 @@
               measure: this.recipe[measureKey] || '', // Handle missing measures
             });
           }
+          console.log(ingredients);
         }
         return ingredients;
       },
@@ -80,6 +81,7 @@
       }
     }
   };
+
   </script>
   
   <style scoped>
