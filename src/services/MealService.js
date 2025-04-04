@@ -24,5 +24,8 @@ export default {
   },
   filterByCategory(category) {
     return apiClient.get(`/filter.php?c=${category}`);
+  },
+  filterByMainIngredient(ingredient) {
+    return apiClient.get(`/filter.php?i=${ingredient}`)
   }
 };

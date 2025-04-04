@@ -83,6 +83,7 @@ async function filterByCategory(category) {
 
 onBeforeMount(() => {
   getRandomMeals()
+  getCategories()
 })
 
 defineExpose({
